@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Albergatto - Modulo Servizio Cat Sitting</title>
+    <meta name="description" content="Compila online e firma il modulo di cat sitting per la pensione L'Albergatto.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+    <div class="app-layout">
+        <!-- LEFT PANEL: Web Control Form -->
+        <aside class="control-panel">
+            <header class="panel-header">
+                <div class="header-title">
+                    <svg viewBox="0 0 120 120" class="brand-logo-preview-svg" id="brandLogoPreviewSvg">
+                        <circle cx="60" cy="60" r="38" fill="none" stroke="#C59B74" stroke-width="1.5" />
+                        <g transform="translate(25, 28) scale(0.7)">
+                            <!-- Orange Cat (Left) -->
+                            <path d="M25,50 C25,35 45,35 45,50 Z" fill="#E67E22" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="25,42 16,22 30,35" fill="#E67E22" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="45,42 54,22 40,35" fill="#E67E22" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="24,39 19,25 28,34" fill="#FADBD8"/>
+                            <polygon points="46,39 51,25 42,34" fill="#FADBD8"/>
+                            <circle cx="31" cy="42" r="2.5" fill="#2C3E50"/>
+                            <circle cx="39" cy="42" r="2.5" fill="#2C3E50"/>
+                            <polygon points="35,46 33,44 37,44" fill="#E74C3C"/>
+                            <path d="M33,48 C34,49 35,49 35,48 C35,49 36,49 37,48" stroke="#2C3E50" stroke-width="1.5" fill="none"/>
+                            <line x1="26" y1="45" x2="16" y2="44" stroke="#2C3E50" stroke-width="1.5"/>
+                            <line x1="26" y1="48" x2="16" y2="49" stroke="#2C3E50" stroke-width="1.5"/>
+                            <line x1="44" y1="45" x2="54" y2="44" stroke="#2C3E50" stroke-width="1.5"/>
+                            <line x1="44" y1="48" x2="54" y2="49" stroke="#2C3E50" stroke-width="1.5"/>
+
+                            <!-- Grey Cat (Right) -->
+                            <path d="M45,55 C45,40 65,40 65,55 Z" fill="#BDC3C7" stroke="#2C3E50" stroke-width="2"/>
+                            <path d="M55,41 C58,41 64,48 64,55 C64,55 58,55 55,52 Z" fill="#7F8C8D" />
+                            <polygon points="45,47 36,27 50,40" fill="#BDC3C7" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="65,47 74,27 60,40" fill="#BDC3C7" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="44,44 39,30 48,39" fill="#FADBD8"/>
+                            <polygon points="66,44 71,30 62,39" fill="#FADBD8"/>
+                            <circle cx="51" cy="47" r="2.5" fill="#2C3E50"/>
+                            <circle cx="59" cy="47" r="2.5" fill="#2C3E50"/>
+                            <polygon points="55,51 53,49 57,49" fill="#E74C3C"/>
+                            <path d="M53,53 C54,54 55,54 55,53 C55,54 56,54 57,53" stroke="#2C3E50" stroke-width="1.5" fill="none"/>
+                            <line x1="46" y1="50" x2="36" y2="49" stroke="#2C3E50" stroke-width="1.5"/>
+                            <line x1="46" y1="53" x2="36" y2="54" stroke="#2C3E50" stroke-width="1.5"/>
+                            <line x1="64" y1="50" x2="74" y2="49" stroke="#2C3E50" stroke-width="1.5"/>
+                            <line x1="64" y1="53" x2="74" y2="54" stroke="#2C3E50" stroke-width="1.5"/>
+
+                            <!-- Cardboard Box -->
+                            <polygon points="20,60 5,50 35,50" fill="#D2B48C" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="80,60 95,50 65,50" fill="#D2B48C" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="20,60 50,75 50,102 20,87" fill="#C59B74" stroke="#2C3E50" stroke-width="2"/>
+                            <polygon points="50,75 80,60 80,87 50,102" fill="#B38B62" stroke="#2C3E50" stroke-width="2"/>
+                            <line x1="50" y1="75" x2="50" y2="102" stroke="#2C3E50" stroke-width="2" />
+                            <rect x="42" y="82" width="16" height="8" rx="2" fill="none" stroke="#2C3E50" stroke-width="1.5" />
+                        </g>
+                    </svg>
+                    <div>
+                        <h1>L'Albergatto</h1>
+                        <p>Modulo Cat Sitting Digitale</p>
+                    </div>
+                </div>
+            </header>
+
+            <form id="catSittingForm" class="control-form" autocomplete="on">
+                
+                <!-- SEZIONE 1: I GATTI -->
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-cat"></i> Informazioni sui Gatti (Fino a 3)</h3>
+                    
+                    <!-- Gatto 1 -->
+                    <div class="cat-row-inputs">
+                        <span class="cat-number-label">Gatto 1</span>
+                        <div class="grid-4-cols">
+                            <div class="form-group">
+                                <label for="gatto1_nome">Nome</label>
+                                <input type="text" id="gatto1_nome" placeholder="Es. Romeo">
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto1_razza">Razza</label>
+                                <input type="text" id="gatto1_razza" placeholder="Es. Persiano">
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto1_sesso">Sesso</label>
+                                <select id="gatto1_sesso">
+                                    <option value=""></option>
+                                    <option value="M">M</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto1_nascita">Data Nascita</label>
+                                <input type="text" id="gatto1_nascita" placeholder="GG/MM/AAAA">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gatto 2 -->
+                    <div class="cat-row-inputs">
+                        <span class="cat-number-label">Gatto 2</span>
+                        <div class="grid-4-cols">
+                            <div class="form-group">
+                                <label for="gatto2_nome">Nome</label>
+                                <input type="text" id="gatto2_nome" placeholder="Es. Chicca">
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto2_razza">Razza</label>
+                                <input type="text" id="gatto2_razza" placeholder="Es. Siamese">
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto2_sesso">Sesso</label>
+                                <select id="gatto2_sesso">
+                                    <option value=""></option>
+                                    <option value="M">M</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto2_nascita">Data Nascita</label>
+                                <input type="text" id="gatto2_nascita" placeholder="GG/MM/AAAA">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gatto 3 -->
+                    <div class="cat-row-inputs">
+                        <span class="cat-number-label">Gatto 3</span>
+                        <div class="grid-4-cols">
+                            <div class="form-group">
+                                <label for="gatto3_nome">Nome</label>
+                                <input type="text" id="gatto3_nome" placeholder="Es. Silvestro">
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto3_razza">Razza</label>
+                                <input type="text" id="gatto3_razza" placeholder="Es. Europeo">
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto3_sesso">Sesso</label>
+                                <select id="gatto3_sesso">
+                                    <option value=""></option>
+                                    <option value="M">M</option>
+                                    <option value="F">F</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gatto3_nascita">Data Nascita</label>
+                                <input type="text" id="gatto3_nascita" placeholder="GG/MM/AAAA">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEZIONE 2: CONTATTI MEDICI E CARATTERE -->
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-user-doctor"></i> Informazioni Mediche e Comportamento</h3>
+                    <div class="grid-2-cols">
+                        <div class="form-group">
+                            <label for="veterinario">Veterinario di fiducia</label>
+                            <input type="text" id="veterinario" placeholder="Nome Clinica o Medico">
+                        </div>
+                        <div class="form-group">
+                            <label for="veterinario_recapito">Recapito Veterinario</label>
+                            <input type="text" id="veterinario_recapito" placeholder="Telefono o Indirizzo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="farmaci">Eventuali farmaci in uso</label>
+                        <input type="text" id="farmaci" placeholder="Specificare dosaggi e orari">
+                    </div>
+                    <div class="form-group">
+                        <label for="carattere">Caratteristiche comportamentali</label>
+                        <textarea id="carattere" rows="2" placeholder="Es. Timido, aggressivo con altri gatti, cibo specifici..."></textarea>
+                    </div>
+                </div>
+
+                <!-- SEZIONE 3: DATI PROPRIETARIO -->
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-user"></i> Dati del Proprietario</h3>
+                    <div class="form-group">
+                        <label for="proprietario">Nome e Cognome Proprietario</label>
+                        <input type="text" id="proprietario" placeholder="Es. Mario Rossi">
+                    </div>
+                    <div class="grid-2-cols">
+                        <div class="form-group">
+                            <label for="codice_fiscale">Codice Fiscale</label>
+                            <input type="text" id="codice_fiscale" placeholder="Es. RSSMRA80A01H501U">
+                        </div>
+                        <div class="form-group">
+                            <label for="cellulare">Cellulare</label>
+                            <input type="tel" id="cellulare" placeholder="Es. 333 1234567">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Es. mario.rossi@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="comune">Comune di residenza</label>
+                        <input type="text" id="comune" placeholder="Es. Milano (MI)">
+                    </div>
+                    <div class="grid-3-cols">
+                        <div class="form-group flex-grow-3">
+                            <label for="indirizzo">Indirizzo di residenza</label>
+                            <input type="text" id="indirizzo" placeholder="Es. Via Roma, 15">
+                        </div>
+                        <div class="form-group">
+                            <label for="scala">Scala</label>
+                            <input type="text" id="scala" placeholder="Es. A">
+                        </div>
+                        <div class="form-group">
+                            <label for="piano">Piano</label>
+                            <input type="text" id="piano" placeholder="Es. 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEZIONE 4: SERVIZIO E DATE -->
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-calendar-days"></i> Dettagli del Servizio</h3>
+                    <div class="grid-3-cols-custom">
+                        <div class="form-group">
+                            <label for="periodo_dal">Periodo DAL</label>
+                            <input type="text" id="periodo_dal" placeholder="Es. 01/08/2026">
+                        </div>
+                        <div class="form-group">
+                            <label for="periodo_al">Periodo AL</label>
+                            <input type="text" id="periodo_al" placeholder="Es. 15/08/2026">
+                        </div>
+                        <div class="form-group">
+                            <label>Passaggi Giornalieri</label>
+                            <div class="passaggi-selector">
+                                <label class="passaggi-option">
+                                    <input type="checkbox" id="passaggi_1" value="1">
+                                    <span>1</span>
+                                </label>
+                                <label class="passaggi-option">
+                                    <input type="checkbox" id="passaggi_2" value="2">
+                                    <span>2</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- New input row for details -->
+                    <div class="grid-2-cols" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <label for="passaggi_1_dettaglio">Giorni per 1 Passaggio</label>
+                            <input type="text" id="passaggi_1_dettaglio" placeholder="Es. 2, 3 ottobre">
+                        </div>
+                        <div class="form-group">
+                            <label for="passaggi_2_dettaglio">Giorni per 2 Passaggi</label>
+                            <input type="text" id="passaggi_2_dettaglio" placeholder="Es. 4 ottobre">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SEZIONE 5: LUOGO, DATA E FIRME DIGITALI -->
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-pen-nib"></i> Luogo, Data e Firme Digitali</h3>
+                    <div class="grid-2-cols">
+                        <div class="form-group">
+                            <label for="luogo_data">Luogo e Data</label>
+                            <input type="text" id="luogo_data" placeholder="Es. Milano, 15/07/2026">
+                        </div>
+                    </div>
+                    
+                    <!-- Firma Modulo Prenotazione -->
+                    <div class="signature-section-panel">
+                        <div class="sig-header">
+                            <label>Firma Prenotazione</label>
+                            <button type="button" class="btn-clear-sig" id="btnClearSig1"><i class="fa-solid fa-eraser"></i> Cancella</button>
+                        </div>
+                        <div class="signature-pad-wrapper">
+                            <canvas id="sigCanvas1" width="400" height="120"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Firma Trattamento Dati Privacy -->
+                    <div class="signature-section-panel">
+                        <div class="sig-header">
+                            <label>Firma Autorizzazione Privacy</label>
+                            <button type="button" class="btn-clear-sig" id="btnClearSig2"><i class="fa-solid fa-eraser"></i> Cancella</button>
+                        </div>
+                        <div class="signature-pad-wrapper">
+                            <canvas id="sigCanvas2" width="400" height="120"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACTION BUTTONS -->
+                <div class="form-actions-panel">
+                    <button type="button" id="btnPrintPdf" class="btn-action btn-pdf">
+                        <i class="fa-solid fa-print"></i> Stampa / Salva PDF
+                    </button>
+                    <div class="secondary-actions">
+                        <button type="button" id="btnResetFields" class="btn-action btn-reset">
+                            <i class="fa-solid fa-rotate-left"></i> Svuota Campi
+                        </button>
+                        <button type="button" id="btnClearStorage" class="btn-action btn-danger">
+                            <i class="fa-solid fa-trash-can"></i> Cancella Dati Salvati
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </aside>
+
+        <!-- RIGHT PANEL: Live Document Preview (Replicates PDF 1:1) -->
+        <main class="preview-container">
+            <div class="preview-toolbar">
+                <span><i class="fa-solid fa-eye"></i> Anteprima Foglio A4 (Fedeltà PDF 1:1)</span>
+                <span class="zoom-indicator">Fedeltà visiva originale 100% integrata</span>
+            </div>
+            
+            <div class="a4-wrapper">
+                <div class="a4-page" id="printableArea">
+                    <!-- BACKGROUND WATERMARK (Original image, loaded relative) -->
+                    <img id="watermarkImg" class="document-watermark-img" alt="Watermark" src="logo_new.png">
+
+                    <!-- DOCUMENT BODY -->
+                    <div class="doc-content">
+                        <!-- HEADER (Original title image rendered directly) -->
+                        <div class="doc-header">
+                            <img id="brandTitleImg" class="brand-title-img" alt="L'Albergatto Pensione Per Gatti" src="titolo_new.png">
+                            <h4 class="form-title">MODULO SERVIZIO CAT SITTING</h4>
+                        </div>
+
+                        <!-- SECTION: CATS INFO -->
+                        <div class="doc-cats-section">
+                            <!-- Cat row 1 -->
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-3">
+                                    <span class="field-label">Nome</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto1_nome">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-2">
+                                    <span class="field-label">Razza</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto1_razza">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-05">
+                                    <span class="field-label">Sesso</span>
+                                    <span class="field-box text-center font-handwritten" id="doc_gatto1_sesso">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-18">
+                                    <span class="field-label">Data di nascita</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto1_nascita">&nbsp;</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Cat row 2 -->
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-3">
+                                    <span class="field-label">Nome</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto2_nome">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-2">
+                                    <span class="field-label">Razza</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto2_razza">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-05">
+                                    <span class="field-label">Sesso</span>
+                                    <span class="field-box text-center font-handwritten" id="doc_gatto2_sesso">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-18">
+                                    <span class="field-label">Data di nascita</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto2_nascita">&nbsp;</span>
+                                </div>
+                            </div>
+
+                            <!-- Cat row 3 -->
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-3">
+                                    <span class="field-label">Nome</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto3_nome">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-2">
+                                    <span class="field-label">Razza</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto3_razza">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-05">
+                                    <span class="field-label">Sesso</span>
+                                    <span class="field-box text-center font-handwritten" id="doc_gatto3_sesso">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-18">
+                                    <span class="field-label">Data di nascita</span>
+                                    <span class="field-box font-handwritten" id="doc_gatto3_nascita">&nbsp;</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION: VETERINARIAN AND MEDICAL -->
+                        <div class="doc-medical-section">
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-35">
+                                    <span class="field-label">Veterinario di fiducia</span>
+                                    <span class="field-box font-handwritten" id="doc_veterinario">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-25">
+                                    <span class="field-label">Recapito</span>
+                                    <span class="field-box font-handwritten" id="doc_veterinario_recapito">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-1">
+                                    <span class="field-label">Eventuali farmaci in uso</span>
+                                    <span class="field-box font-handwritten" id="doc_farmaci">&nbsp;</span>
+                                </div>
+                            </div>
+                            <!-- Two separate boxes for comportamento to match original layout -->
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-1">
+                                    <span class="field-label">Caratteriste comportamentali</span>
+                                    <span class="field-box font-handwritten" id="doc_carattere_line1">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-1">
+                                    <span class="field-box font-handwritten" id="doc_carattere_line2">&nbsp;</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION: OWNER INFO -->
+                        <div class="doc-owner-section">
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-1">
+                                    <span class="field-label">Proprietario</span>
+                                    <span class="field-box font-handwritten" id="doc_proprietario">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-17">
+                                    <span class="field-label">Codice Fiscale</span>
+                                    <span class="field-box font-handwritten uppercase-text" id="doc_codice_fiscale">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-13">
+                                    <span class="field-label">Cellulare</span>
+                                    <span class="field-box font-handwritten" id="doc_cellulare">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-1">
+                                    <span class="field-label">Email</span>
+                                    <span class="field-box font-handwritten" id="doc_email">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-1">
+                                    <span class="field-label">Comune</span>
+                                    <span class="field-box font-handwritten" id="doc_comune">&nbsp;</span>
+                                </div>
+                            </div>
+                            <div class="doc-row">
+                                <div class="field-item flex-grow-35">
+                                    <span class="field-label">Indirizzo</span>
+                                    <span class="field-box font-handwritten" id="doc_indirizzo">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-05">
+                                    <span class="field-label">Scala</span>
+                                    <span class="field-box text-center font-handwritten" id="doc_scala">&nbsp;</span>
+                                </div>
+                                <div class="field-item flex-grow-05">
+                                    <span class="field-label">Piano</span>
+                                    <span class="field-box text-center font-handwritten" id="doc_piano">&nbsp;</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION: SERVICE SELECTION (Grid columns layout matching PDF) -->
+                        <div class="doc-service-section">
+                            <div class="service-grid">
+                                <!-- Left Column: Period DAL AL -->
+                                <div class="service-col-left">
+                                    <div class="service-main-label">Si richiede il servizio</div>
+                                    <div class="periodo-fields">
+                                        <div class="field-item">
+                                            <span class="field-label">Periodo DAL</span>
+                                            <span class="field-box font-handwritten text-center" id="doc_periodo_dal">&nbsp;</span>
+                                        </div>
+                                        <div class="field-item">
+                                            <span class="field-label">AL</span>
+                                            <span class="field-box font-handwritten text-center" id="doc_periodo_al">&nbsp;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Right Column: Passaggi 1 or 2 -->
+                                <div class="service-col-right">
+                                    <div class="passaggi-wrapper">
+                                        <div class="service-main-label">Passaggi giornalieri</div>
+                                        <div class="passaggi-columns-container">
+                                            <div class="passaggi-column-item align-left">
+                                                <div class="passaggi-box" id="doc_passaggi_1">1</div>
+                                                <span class="passaggi-detail-line font-handwritten" id="doc_passaggi_1_dettaglio">&nbsp;</span>
+                                            </div>
+                                            <div class="passaggi-column-item align-right">
+                                                <div class="passaggi-box" id="doc_passaggi_2">2</div>
+                                                <span class="passaggi-detail-line font-handwritten" id="doc_passaggi_2_dettaglio">&nbsp;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTION: TERMS AND SIGNATURES (Vertical stack layout matching PDF, with proportional shortened lines) -->
+                        <div class="doc-terms-section">
+                            <p class="terms-disclaimer">Da restituire via mail o cartaceo, compilato e firmato in tutte le sue parti per rendere valida la prenotazione</p>
+                            
+                            <div class="signature-vertical-stack">
+                                <div class="sig-line-container-short width-60">
+                                    <span class="sig-label-inline">Luogo e data</span>
+                                    <span class="sig-value-text-inline font-handwritten" id="doc_luogo_data">&nbsp;</span>
+                                </div>
+                                
+                                <div class="sig-line-container-short width-45 margin-top-4">
+                                    <span class="sig-label-inline">Firma</span>
+                                    <div class="sig-image-box-inline">
+                                        <img id="imgSig1" src="" alt="Firma non inserita" class="sig-preview-img hidden">
+                                    </div>
+                                </div>
+                                
+                                <p class="privacy-statement">Autorizzo il trattamento dei miei dati personali, ai sensi del D. lgs. 196 del 30/06/2003</p>
+                                
+                                <div class="sig-line-container-short width-45">
+                                    <span class="sig-label-inline">Firma</span>
+                                    <div class="sig-image-box-inline">
+                                        <img id="imgSig2" src="" alt="Firma non inserita" class="sig-preview-img hidden">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FOOTER (Centered text, logo bottom right, layout matches original PDF exactly with line breaks and indent) -->
+                        <footer class="doc-footer">
+                            <div class="footer-contacts-centered">
+                                <p class="footer-brand">L'Albergatto</p>
+                                <p>Via Isonzo, 8 – 20095 Cusano Milanino (MI)</p>
+                                <p>+39 351 5464765 | albergatto.cusano@gmail.com</p>
+                                <p class="footer-subtext">Marchio di proprietà di L'Osso Snc</p>
+                                <p class="footer-subtext">Piazza XXV Aprile 19 – 20095 Cusano Milanino (MI)</p>
+                                <p class="footer-subtext">P.I. – C.F. 02861760961</p>
+                            </div>
+                            
+                            <img id="footerLogoImg" class="footer-logo-img" alt="L'Albergatto Logo" src="logo_new.png">
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>
